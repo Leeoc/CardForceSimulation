@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="847f39f1-6a70-43af-8f52-6358aaa73ac0" name="Default Changelist" comment="" />
+    <list default="true" id="847f39f1-6a70-43af-8f52-6358aaa73ac0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/CardForceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COM498_CW2/Deck$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COM498_CW2/Deck$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COM498_CW2/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COM498_CW2/Deck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COM498_CW2/DeckInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COM498_CW2/DeckInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COM498_CW2/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COM498_CW2/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DeckInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeckInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,10 +28,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1UbgTKCB49cyWknkFR6pcGg9i7T" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -29,8 +43,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.CardForceClient">
+    <configuration name="CardForceClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CardForceClient" />
+      <module name="COM498_CW2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="COM498_CW2" />
@@ -40,6 +62,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CardForceClient" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
@@ -70,22 +93,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="220" key="GridCell.Tab.0.bottom" timestamp="1575984622186">
+    <state width="1398" height="220" key="GridCell.Tab.0.bottom" timestamp="1576585383155">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1398" height="220" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1575984622186" />
-    <state width="1398" height="220" key="GridCell.Tab.0.center" timestamp="1575984622184">
+    <state width="1398" height="220" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1576585383155" />
+    <state width="1398" height="220" key="GridCell.Tab.0.bottom/2560.120.1440.877/0.23.2560.1026@0.23.2560.1026" timestamp="1576066478141" />
+    <state width="1398" height="220" key="GridCell.Tab.0.center" timestamp="1576585383155">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1398" height="220" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1575984622184" />
-    <state width="1398" height="220" key="GridCell.Tab.0.left" timestamp="1575984622184">
+    <state width="1398" height="220" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1576585383155" />
+    <state width="1398" height="220" key="GridCell.Tab.0.center/2560.120.1440.877/0.23.2560.1026@0.23.2560.1026" timestamp="1576066478140" />
+    <state width="1398" height="220" key="GridCell.Tab.0.left" timestamp="1576585383154">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1398" height="220" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1575984622184" />
-    <state width="1398" height="220" key="GridCell.Tab.0.right" timestamp="1575984622185">
+    <state width="1398" height="220" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1576585383154" />
+    <state width="1398" height="220" key="GridCell.Tab.0.left/2560.120.1440.877/0.23.2560.1026@0.23.2560.1026" timestamp="1576066478140" />
+    <state width="1398" height="220" key="GridCell.Tab.0.right" timestamp="1576585383155">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1398" height="220" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1575984622185" />
+    <state width="1398" height="220" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1576585383155" />
+    <state width="1398" height="220" key="GridCell.Tab.0.right/2560.120.1440.877/0.23.2560.1026@0.23.2560.1026" timestamp="1576066478141" />
     <state x="745" y="193" width="670" height="676" key="search.everywhere.popup" timestamp="1575983807211">
       <screen x="0" y="23" width="1440" height="846" />
     </state>

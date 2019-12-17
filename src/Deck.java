@@ -7,6 +7,8 @@
  * @param <T> The Data type you want to use.
  */
 
+import java.util.Random;
+
 public class Deck<T> implements DeckInterface<T> {
 
     // Private Method variables:
@@ -17,8 +19,15 @@ public class Deck<T> implements DeckInterface<T> {
      * Main contructor for the list, will init the list with null values.
      */
     public Deck(){
-        //init a empty list
         init();
+        if(true) {
+            for (int i = 0; i < 4; i++) {
+                for (int j = 1; j < 14; j++) {
+                    Card tempCard = new Card(j, i);  // creates a new card using int constructor
+                    addNew((T)tempCard);
+                }
+            }
+        }
     }
 
     /**
@@ -39,24 +48,49 @@ public class Deck<T> implements DeckInterface<T> {
     }
 
     /**
+     * Public method to add a new entry at a given position into the list.
+     * @param position int for the position to be added to
+     * @param newEntry the data to be added into the list
+     */
+    public void addNew(T newEntry, int position) {
+        if ((position >= 1) && (position <= currentSize + 1)) {
+            assert position > 0;
+            Node newNode = new Node(newEntry);
+
+            if (position == 1) {
+                // Add node to first position in the list:
+                newNode.setNext(firstNode);
+                firstNode = newNode;
+            } else {
+                Node nodeBefore = getNodeAt(position - 1);
+                Node nodeAfter = nodeBefore.getNext();
+                newNode.setNext(nodeAfter);
+                nodeBefore.setNext(newNode);
+            }
+            currentSize++;
+        } else
+            throw new IndexOutOfBoundsException("Illegal position given to add operation.");
+    }
+
+    /**
      * Public method used to remove the last node in the list.
      * If only one entry in list the list will be set to null.
      */
-    // TODO: Need to add a last varible in the Node class to make this process more efficent.
-    // TODO: This works but not very well lol. 
+    // TODO: Need to add a last variable in the Node class to make this process more efficent.
+    // TODO: This works but not very well lol.
     public void remove(){
         if (isEmpty()){
             init();
         } else {
             Node Newlast = getNodeAt(currentSize - 1);
             currentSize--;
-
         }
     }
 
     /**
      * Public method to print the entire contents of the list to the console.
      */
+    //TODO: Add try except for this. This works somehow took alot of casting fml
     public void show(){
         System.out.println("The Deck contains: ");
 
@@ -65,8 +99,12 @@ public class Deck<T> implements DeckInterface<T> {
 
         //loop through all the entries in the list and display their contents
         for(int i = 0; i < currentSize; i++){
-            System.out.print(current.getData());
+            Card tempCurrent = (Card)current.getData();
+            Card showCard = tempCurrent;    //cast the ADT to a card to use its show method.
+            showCard.show();
+//            System.out.print(current.getData());
             // set the current node to be the next node in the list
+
             current = current.getNext();
         }
     }
@@ -108,6 +146,23 @@ public class Deck<T> implements DeckInterface<T> {
         } else {
             throw new IndexOutOfBoundsException("\nList has not been created.");
         }
+    }
+
+    /**
+     * Public method to randomly shuffle the deck.
+     */
+    public void shuffle(){
+        Random rand = new Random();
+        Deck<Node> shuffleDeck = new Deck<>();
+
+        for(int i = 0; i <= currentSize; i++) {
+            int randPosition = rand.nextInt(currentSize);
+            T suit = getNode(randPosition);
+            Node newnode = new Node(suit);
+//            Card tempCard = new Card();
+            shuffleDeck.addNew(newnode);
+        }
+        shuffleDeck.show();
     }
 
 
@@ -156,6 +211,7 @@ public class Deck<T> implements DeckInterface<T> {
         return result;
 
     }
+
 
 
     /**

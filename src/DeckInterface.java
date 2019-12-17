@@ -1,9 +1,11 @@
 public interface DeckInterface<T> {
-    public void addNew(T entry);
-    public void show();
-    public int getSize();
-    public T getNode(int position);
-    public void reveal();
-    public void remove();
+    void addNew(T entry);
+    void show();
+    int getSize();
+    T getNode(int position);
+    void reveal();
+    void remove();
+    void shuffle();
+//    public void Deck(boolean cardDeck);
 //    public void Deck(boolean cardDeck);
 }
