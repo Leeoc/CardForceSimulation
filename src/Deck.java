@@ -16,17 +16,26 @@ public class Deck<T> implements DeckInterface<T> {
     private int currentSize;
 
     /**
-     * Main contructor for the list, will init the list with null values.
+     * Main constructor for the list, will init the list with null values. And create a deck of card objects within the
+     * list that has been created.
      */
     public Deck(){
         init();
         if(true) {
             for (int i = 0; i < 4; i++) {
-                for (int j = 1; j < 14; j++) {
+                for (int j = 1; j < 13; j++) {
                     Card tempCard = new Card(j, i);  // creates a new card using int constructor
                     addNew((T)tempCard);
                 }
             }
+        }
+    }
+
+    public Deck(boolean empty){
+        if (empty == true) {
+            init();
+        } else {
+            throw new IllegalArgumentException("Cannot init list, try using default constructor. i.e Deck()");
         }
     }
 
@@ -79,7 +88,8 @@ public class Deck<T> implements DeckInterface<T> {
     // TODO: Need to add a last variable in the Node class to make this process more efficent.
     // TODO: This works but not very well lol.
     public void remove(){
-        if (isEmpty()){
+
+        if (isEmpty()) {
             init();
         } else {
             Node Newlast = getNodeAt(currentSize - 1);
@@ -88,24 +98,45 @@ public class Deck<T> implements DeckInterface<T> {
     }
 
     /**
+     * Public method to remove a node at a given int index position.
+     * @param position int index of the node to be removed.
+     */
+    //TODO: Add a new removeAt method to remove a node at a given index.
+    public void removeAt(int position){
+        if(isEmpty()){
+            init();
+        } else if ((position > 0) && (position <= currentSize) && (!isEmpty())){
+
+        } else {
+            throw new IndexOutOfBoundsException("Position isn't valid.");
+        }
+    }
+
+
+    /**
      * Public method to print the entire contents of the list to the console.
      */
-    //TODO: Add try except for this. This works somehow took alot of casting fml
     public void show(){
-        System.out.println("The Deck contains: ");
+        assert !isEmpty();
+        if (!isEmpty()) {
+            System.out.println("The Deck contains: ");
 
-        // Set the current node to the first node in the list
-        Node current = firstNode;
+            // Set the current node to the first node in the list
+            Node current = firstNode;
 
-        //loop through all the entries in the list and display their contents
-        for(int i = 0; i < currentSize; i++){
-            Card tempCurrent = (Card)current.getData();
-            Card showCard = tempCurrent;    //cast the ADT to a card to use its show method.
-            showCard.show();
-//            System.out.print(current.getData());
-            // set the current node to be the next node in the list
-
-            current = current.getNext();
+            //loop through all the entries in the list and display their contents
+            for (int i = 0; i < currentSize; i++) {
+                try {
+                    Card tempCurrent = (Card) current.getData();
+                    Card showCard = tempCurrent;    //cast the ADT to a card to use its show method.
+                    showCard.show();
+                } catch (Exception IllegalArgumentException) {
+                    System.out.println(current.getData());
+                }
+                current = current.getNext();
+            }
+        } else {
+            throw new IndexOutOfBoundsException("List is empty");
         }
     }
 
@@ -151,7 +182,7 @@ public class Deck<T> implements DeckInterface<T> {
     /**
      * Public method to randomly shuffle the deck.
      */
-    public void shuffle(){
+    public void shuffle1(){
         Random rand = new Random();
         Deck<Node> shuffleDeck = new Deck<>();
 
@@ -166,6 +197,46 @@ public class Deck<T> implements DeckInterface<T> {
     }
 
 
+    //TODO: create a private swap method to to swap two elements from a given position.
+    public Deck shuffle(){
+        Random rand = new Random();
+        Deck<T> shuffleDeck = new Deck<>();
+        while (currentSize > 0) {
+            int index = (int) (Math.random() * currentSize) + 1;
+//            System.out.println(index);
+            T tempCard = getNode(index);
+            shuffleDeck.addNew(tempCard);
+            //TODO: Create a remove(index) method and remove the card being added into shuffle deck.
+            currentSize--;
+
+        }
+        return shuffleDeck;
+    }
+
+
+    /**
+     * Private helper method to swap two nodes in the list
+     * @param firstIndex the index of the first node to be swapped.
+     * @param secondIndex the index of the second node to be swapped.
+     */
+    public void swapNode(int firstIndex, int secondIndex){
+        assert !isEmpty();
+
+        if(firstIndex > 0 && firstIndex <= currentSize && secondIndex > 0
+                && secondIndex <= currentSize && firstIndex != secondIndex){
+            //get the nodes data.
+            T firstData = getNode(firstIndex);  //DATA OF THE NODES ie card
+            T secondData = getNode(secondIndex);
+            // swap the data of the two nodes not the node links
+            Node temp = getNodeAt(firstIndex);
+            temp.setData(firstData);
+            temp = getNodeAt(secondIndex);
+            temp.setData(secondData);
+        } else {
+            throw new IndexOutOfBoundsException("Invalid index used.");
+        }
+    }
+
     /**
      * Private helper method to return the node at certain index value.
      * @param position int used to define what node you need to find
@@ -177,7 +248,7 @@ public class Deck<T> implements DeckInterface<T> {
         for (int i = 1; i < position; i++){
             current = current.getNext();
         }
-        // Make sure current node isnt null
+        // Make sure current node isn't null
         assert current != null;
         return current;
     }

@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="847f39f1-6a70-43af-8f52-6358aaa73ac0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CardForceClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COM498_CW2/Deck$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COM498_CW2/Deck$Node.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COM498_CW2/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COM498_CW2/Deck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COM498_CW2/DeckInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COM498_CW2/DeckInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COM498_CW2/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COM498_CW2/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardForceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardForceClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DeckInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeckInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
@@ -29,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Lee O'Connell" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -45,7 +50,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Application.CardForceClient">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="CardForceClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CardForceClient" />
       <module name="COM498_CW2" />
@@ -62,8 +67,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CardForceClient" />
         <item itemvalue="Application.Test" />
+        <item itemvalue="Application.CardForceClient" />
       </list>
     </recent_temporary>
   </component>
@@ -90,29 +95,50 @@
       <option name="presentableId" value="Default" />
       <updated>1575630714243</updated>
     </task>
+    <task id="LOCAL-00001" summary="Finished, init of card deck using Casting to create the ADT deck. Need to add try except to the show method in Deck class. TODO: Add finish shuffle function, Add card force function. Tidy up code">
+      <created>1576585595250</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576585595250</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Finished, init of card deck using Casting to create the ADT deck. Need to add try except to the show method in Deck class. TODO: Add finish shuffle function, Add card force function. Tidy up code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished, init of card deck using Casting to create the ADT deck. Need to add try except to the show method in Deck class. TODO: Add finish shuffle function, Add card force function. Tidy up code" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="220" key="GridCell.Tab.0.bottom" timestamp="1576585383155">
+    <state x="344" y="48" key="CommitChangelistDialog2" timestamp="1576585595024">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1398" height="220" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1576585383155" />
+    <state x="344" y="48" key="CommitChangelistDialog2/0.23.1440.846@0.23.1440.846" timestamp="1576585595024" />
+    <state width="1398" height="220" key="GridCell.Tab.0.bottom" timestamp="1576602282719">
+      <screen x="0" y="23" width="1440" height="846" />
+    </state>
+    <state width="1398" height="220" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1576602282719" />
     <state width="1398" height="220" key="GridCell.Tab.0.bottom/2560.120.1440.877/0.23.2560.1026@0.23.2560.1026" timestamp="1576066478141" />
-    <state width="1398" height="220" key="GridCell.Tab.0.center" timestamp="1576585383155">
+    <state width="1398" height="220" key="GridCell.Tab.0.center" timestamp="1576602282719">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1398" height="220" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1576585383155" />
+    <state width="1398" height="220" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1576602282719" />
     <state width="1398" height="220" key="GridCell.Tab.0.center/2560.120.1440.877/0.23.2560.1026@0.23.2560.1026" timestamp="1576066478140" />
-    <state width="1398" height="220" key="GridCell.Tab.0.left" timestamp="1576585383154">
+    <state width="1398" height="220" key="GridCell.Tab.0.left" timestamp="1576602282718">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1398" height="220" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1576585383154" />
+    <state width="1398" height="220" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1576602282718" />
     <state width="1398" height="220" key="GridCell.Tab.0.left/2560.120.1440.877/0.23.2560.1026@0.23.2560.1026" timestamp="1576066478140" />
-    <state width="1398" height="220" key="GridCell.Tab.0.right" timestamp="1576585383155">
+    <state width="1398" height="220" key="GridCell.Tab.0.right" timestamp="1576602282719">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1398" height="220" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1576585383155" />
+    <state width="1398" height="220" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1576602282719" />
     <state width="1398" height="220" key="GridCell.Tab.0.right/2560.120.1440.877/0.23.2560.1026@0.23.2560.1026" timestamp="1576066478141" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1576585602524">
+      <screen x="0" y="23" width="1440" height="846" />
+    </state>
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.23.1440.846@0.23.1440.846" timestamp="1576585602524" />
     <state x="745" y="193" width="670" height="676" key="search.everywhere.popup" timestamp="1575983807211">
       <screen x="0" y="23" width="1440" height="846" />
     </state>

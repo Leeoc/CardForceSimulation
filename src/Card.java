@@ -65,9 +65,8 @@ public class Card<T>{
 
 
     /**
-     * Getter & Setters
+     * Public method to show the suit, value, face and colour of the card.
      */
-
     public void show(){
         if(value >= 10 || value == 1) {
             String tempFaceName = "";
@@ -86,18 +85,34 @@ public class Card<T>{
         }
     }
 
+    /**
+     * Set current cards value.
+     * @param val int to set value too.
+     */
     public void setValue(int val){
         this.value = val;
     }
 
+    /**
+     * Set current cards suit
+     * @param suit String to set suit too.
+     */
     public void setSuit(String suit){
         this.suit = suit;
     }
 
+    /**
+     * Get the suit of the current card.
+     * @return String containing the suit of the card.
+     */
     public String getSuit(){
         return this.suit;
     }
 
+    /**
+     * Get the value of the current card.
+     * @return int containing the value of the card.
+     */
     public int getValue(){
         return this.value;
     }
@@ -125,15 +140,9 @@ public class Card<T>{
             }
 
             // Automatically set Face depending on value of card:
-            if (value >= 10 || value == 1) {
-                this.face = false;
-            } else {
-                this.face = true;
-            }
+            this.face = value < 10 && value != 1;
         } else {
             throw new IndexOutOfBoundsException("Card/Suit value out of bounds");
         }
     }
-
-
 }

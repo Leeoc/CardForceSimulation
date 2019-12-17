@@ -5,7 +5,8 @@ public interface DeckInterface<T> {
     T getNode(int position);
     void reveal();
     void remove();
-    void shuffle();
+    Deck shuffle();
+    void swapNode(int firstIndex, int secondIndex);
 //    public void Deck(boolean cardDeck);
 //    public void Deck(boolean cardDeck);
 }

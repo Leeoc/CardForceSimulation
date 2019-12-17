@@ -4,7 +4,14 @@ public class Test {
 
         //set to null so the constructor can init the list as empty
         DeckInterface<Card> testingDeck= new Deck<>();
-
+        DeckInterface<Integer> testInt = new Deck<>(true);
+        Integer[] array = {10, 20, 30, 40};
+        for(int i = 0; i < array.length; i++) {
+            testInt.addNew(i);
+        }
+        testInt.show();
+        testInt.swapNode(1,2);
+        testInt.show();
 //        testingDeck = deck();
 //        String tempSuit = "";
 //        for(int i = 1; i < testingDeck.getSize(); i++){
@@ -17,10 +24,11 @@ public class Test {
 //                System.out.println("\n\n");
 //            }
 //        }
-        for(int i = 1; i < testingDeck.getSize(); i++){
-            Card temp = testingDeck.getNode(i);
-            temp.show();
-        }
+        //TODO REMOVE THIS FOR TESTS
+//        for(int i = 1; i < testingDeck.getSize(); i++){
+//            Card temp = testingDeck.getNode(i);
+//            temp.show();
+//        }
         // show the top card in the deck
 //        testingDeck.reveal();
 //        testingDeck.shuffle();

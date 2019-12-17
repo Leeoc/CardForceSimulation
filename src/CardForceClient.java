@@ -15,10 +15,12 @@ public class CardForceClient {
         cardDeck.show();
         cardDeck.reveal();
         // CARD FORCE TRICK
-        getInput();
+//        DeckInterface shuffle =
+        cardDeck.swapNode(1,3);
+        System.out.println("showing deck");
         cardDeck.show();
         // FIND CARD IN DECK
-        getInput();
+//        getInput();
 
 
     }
