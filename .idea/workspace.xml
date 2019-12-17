@@ -127,10 +127,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Finished implementing shuffle method, made changes to show method in Deck class so that if a unknown type is encountered it can still be displayed as either its Object reference, or its primitive type. TODO: Add both in and out shuffles, create a find function using a recursive search." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="48" key="CommitChangelistDialog2" timestamp="1576612762182">
+    <state x="0" y="48" key="CommitChangelistDialog2" timestamp="1576612790887">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state x="0" y="48" key="CommitChangelistDialog2/0.23.1440.846@0.23.1440.846" timestamp="1576612762182" />
+    <state x="0" y="48" key="CommitChangelistDialog2/0.23.1440.846@0.23.1440.846" timestamp="1576612790887" />
     <state width="1398" height="262" key="GridCell.Tab.0.bottom" timestamp="1576612762229">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
