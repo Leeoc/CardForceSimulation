@@ -3,10 +3,11 @@ public interface DeckInterface<T> {
     void show();
     int getSize();
     T getNode(int position);
-    void reveal();
+    T reveal();
     void remove();
     void shuffle();
     void swapNode(int firstIndex, int secondIndex);
+    int find(T data);
 //    public void Deck(boolean cardDeck);
 //    public void Deck(boolean cardDeck);
 }

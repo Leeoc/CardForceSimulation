@@ -7,11 +7,13 @@ public class Test {
         DeckInterface<Integer> testInt = new Deck<>(true);
         Integer[] array = {10, 20, 30, 40};
         for(int i = 0; i < array.length; i++) {
-            testInt.addNew(i);
+            testInt.addNew(array[i]);
         }
         testInt.show();
         testInt.swapNode(1,2);
         testInt.show();
+        int hello = testInt.find(20);
+
 //        testingDeck = deck();
 //        String tempSuit = "";
 //        for(int i = 1; i < testingDeck.getSize(); i++){

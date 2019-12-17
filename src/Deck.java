@@ -164,7 +164,7 @@ public class Deck<T> implements DeckInterface<T> {
     /**
      *  Public Method to show the top card in the deck.
      */
-    public void reveal(){
+    public T reveal(){
         assert (getSize() > 0);
         if(getSize() > 0) {
             T showNode = getNode(1);
@@ -172,12 +172,14 @@ public class Deck<T> implements DeckInterface<T> {
                 Card showCard = (Card) showNode;    //cast the ADT to a card to use its show method.
                 System.out.println("The top card in the deck is:");
                 showCard.show();
+                return (T)showCard;
             } catch (Exception IllegalArgumentException) {
                 System.out.println("\nIncorrect Data type, expected type of class Card.");
             }
         } else {
             throw new IndexOutOfBoundsException("\nList has not been created.");
         }
+        return null;
     }
 
     /**
@@ -224,6 +226,39 @@ public class Deck<T> implements DeckInterface<T> {
             throw new IndexOutOfBoundsException("Invalid index used.");
         }
     }
+
+    public int find(T data){
+        return sequentialSearch(data,firstNode,1);
+    }
+
+    /**
+     * Private method for recursively searching the list for a given nodes data.
+     * @param data the node to be found
+     * @param currentNode current node being searched
+     * @param index int current index of the node being searched
+     * @return index of the data in the list, if not found will return with 0;
+     */
+    private int sequentialSearch(T data, Node currentNode, int index){
+
+        assert !isEmpty();
+        boolean found = false;
+
+        if (found){
+            return index;
+        }
+        if(currentNode == null){
+            found = false;
+        } else if(data.equals(currentNode.getData())){
+            found = true;
+            return index;
+        } else {
+            index = sequentialSearch(data, currentNode.getNext(), index);
+            index++;
+            return index;
+        }
+        return 0;   // returns a invalid value if it isnt found.
+    }
+
 
     /**
      * Private helper method to return the node at certain index value.

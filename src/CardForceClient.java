@@ -13,20 +13,27 @@ public class CardForceClient {
         DeckInterface<Card> cardDeck = new Deck<>();
         System.out.println("----------------------------------------------------------------------------------");
         cardDeck.show();
-        System.out.println("The top card is:");
+        System.out.println("----------------------------------------------------------------------------------");
         cardDeck.reveal();
         System.out.println("----------------------------------------------------------------------------------");
-        // CARD FORCE TRICK
-//        DeckInterface shuffle =
-        System.out.println("Shuffling the Deck:\n");
+
+        System.out.println("---Shuffling the Deck---");
         cardDeck.shuffle();
-        cardDeck.reveal();
+        Card top = cardDeck.reveal();
+        //TODO: Add In and out shuffles:
+
+//        cardDeck.shuffle();
+//        System.out.println("Shuffled deck:");
+//        cardDeck.show();
+
+        // Double check position is correct using the find method:
+        int index = cardDeck.find(top);
+        System.out.println("Top card is at index: " + index);
         System.out.println("----------------------------------------------------------------------------------");
         System.out.println("******Card force Client Finished******");
         System.out.println("----------------------------------------------------------------------------------");
         System.out.println("John Lee O'Connell\nB00757542\nCW2 COM498\n2nd Year Software Engineering");
-        // FIND CARD IN DECK
-//        getInput();
+
 
 
     }
