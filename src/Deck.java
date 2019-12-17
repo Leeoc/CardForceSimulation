@@ -119,7 +119,7 @@ public class Deck<T> implements DeckInterface<T> {
     public void show(){
         assert !isEmpty();
         if (!isEmpty()) {
-            System.out.println("The Deck contains: ");
+            System.out.println("The Deck contains: \n");
 
             // Set the current node to the first node in the list
             Node current = firstNode;
@@ -170,6 +170,7 @@ public class Deck<T> implements DeckInterface<T> {
             T showNode = getNode(1);
             try {
                 Card showCard = (Card) showNode;    //cast the ADT to a card to use its show method.
+                System.out.println("The top card in the deck is:");
                 showCard.show();
             } catch (Exception IllegalArgumentException) {
                 System.out.println("\nIncorrect Data type, expected type of class Card.");
@@ -182,35 +183,20 @@ public class Deck<T> implements DeckInterface<T> {
     /**
      * Public method to randomly shuffle the deck.
      */
-    public void shuffle1(){
-        Random rand = new Random();
-        Deck<Node> shuffleDeck = new Deck<>();
-
-        for(int i = 0; i <= currentSize; i++) {
-            int randPosition = rand.nextInt(currentSize);
-            T suit = getNode(randPosition);
-            Node newnode = new Node(suit);
-//            Card tempCard = new Card();
-            shuffleDeck.addNew(newnode);
+    //TODO: Clean up the code, find a way to make sure the two random ints dont match and stay within bounds.
+    public void shuffle(){
+//        Random rand = new Random();
+        for(int i = 1; i < currentSize; i++){
+            int rand = (int)(Math.random() * currentSize) + 1;
+            int rand2 = (int)(Math.random() * currentSize) + 1;
+//            System.out.println("random= " + rand + "random2 = " + rand2);
+            try {
+                swapNode(rand, rand2);
+            } catch (Exception E){
+                swapNode(13,44);
+            }
         }
-        shuffleDeck.show();
-    }
 
-
-    //TODO: create a private swap method to to swap two elements from a given position.
-    public Deck shuffle(){
-        Random rand = new Random();
-        Deck<T> shuffleDeck = new Deck<>();
-        while (currentSize > 0) {
-            int index = (int) (Math.random() * currentSize) + 1;
-//            System.out.println(index);
-            T tempCard = getNode(index);
-            shuffleDeck.addNew(tempCard);
-            //TODO: Create a remove(index) method and remove the card being added into shuffle deck.
-            currentSize--;
-
-        }
-        return shuffleDeck;
     }
 
 
@@ -224,14 +210,16 @@ public class Deck<T> implements DeckInterface<T> {
 
         if(firstIndex > 0 && firstIndex <= currentSize && secondIndex > 0
                 && secondIndex <= currentSize && firstIndex != secondIndex){
+
             //get the nodes data.
-            T firstData = getNode(firstIndex);  //DATA OF THE NODES ie card
-            T secondData = getNode(secondIndex);
+            Node firstNode = getNodeAt(firstIndex);  //DATA OF THE NODES ie card
+            Node secondNode = getNodeAt(secondIndex);
             // swap the data of the two nodes not the node links
-            Node temp = getNodeAt(firstIndex);
-            temp.setData(firstData);
-            temp = getNodeAt(secondIndex);
-            temp.setData(secondData);
+            T firstData = firstNode.getData();
+            T secondData = secondNode.getData();
+            firstNode.setData(secondData);
+            secondNode.setData(firstData);
+
         } else {
             throw new IndexOutOfBoundsException("Invalid index used.");
         }
