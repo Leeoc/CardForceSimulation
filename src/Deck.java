@@ -269,6 +269,12 @@ public class Deck<T> implements DeckInterface<T> {
                 count++;
             }
 
+//            System.out.println("First half:");
+//            firstHalf.show();
+//
+//            System.out.println("Second half:");
+//            secondHalf.show();
+
             // clean up unused decks.
             firstHalf = null;
             secondHalf = null;
@@ -317,6 +323,12 @@ public class Deck<T> implements DeckInterface<T> {
                 addNew(firstHalf.getNode(i));
                 count++;
             }
+
+//            System.out.println("First half:");
+//            firstHalf.show();
+//
+//            System.out.println("Second half:");
+//            secondHalf.show();
 
             // clean up unused decks.
             firstHalf = null;

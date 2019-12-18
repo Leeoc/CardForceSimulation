@@ -9,6 +9,7 @@ public interface DeckInterface<T> {
     void swapNode(int firstIndex, int secondIndex);
     int find(T data);
     void inShuffle();
+    void outShuffle();
 //    public void Deck(boolean cardDeck);
 //    public void Deck(boolean cardDeck);
 }

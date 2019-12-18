@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="847f39f1-6a70-43af-8f52-6358aaa73ac0" name="Default Changelist" comment="">
+    <list default="true" id="847f39f1-6a70-43af-8f52-6358aaa73ac0" name="Default Changelist" comment="All shuffle methods complete. TODO: Finish client class, Test all ADT methods on varying data types, cleanup code and add javadoc comments on all classes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COM498_CW2/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COM498_CW2/Card.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COM498_CW2/Deck$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COM498_CW2/Deck$Node.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COM498_CW2/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COM498_CW2/Deck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COM498_CW2/DeckInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COM498_CW2/DeckInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CardForceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardForceClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DeckInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeckInterface.java" afterDir="false" />
@@ -130,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576612857007</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="All shuffle methods complete. TODO: Finish client class, Test all ADT methods on varying data types, cleanup code and add javadoc comments on all classes.">
+      <created>1576681396638</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1576681396638</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -139,37 +144,54 @@
     <MESSAGE value="I give up" />
     <MESSAGE value="Finished implementing shuffle method, made changes to show method in Deck class so that if a unknown type is encountered it can still be displayed as either its Object reference, or its primitive type. TODO: Add both in and out shuffles, create a find function using a recursive search." />
     <MESSAGE value="Finished implementing find function using a recursive linear search. TODO: add in and out shuffle methods and tidy up code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished implementing find function using a recursive linear search. TODO: add in and out shuffle methods and tidy up code." />
+    <MESSAGE value="All shuffle methods complete. TODO: Finish client class, Test all ADT methods on varying data types, cleanup code and add javadoc comments on all classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="All shuffle methods complete. TODO: Finish client class, Test all ADT methods on varying data types, cleanup code and add javadoc comments on all classes." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="48" key="CommitChangelistDialog2" timestamp="1576612856885">
+    <state x="0" y="48" key="CommitChangelistDialog2" timestamp="1576682831622">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state x="0" y="48" key="CommitChangelistDialog2/0.23.1440.846@0.23.1440.846" timestamp="1576612856885" />
-    <state width="1398" height="262" key="GridCell.Tab.0.bottom" timestamp="1576680794912">
+    <state x="0" y="48" key="CommitChangelistDialog2/0.23.1440.846@0.23.1440.846" timestamp="1576682831622" />
+    <state width="1398" height="262" key="GridCell.Tab.0.bottom" timestamp="1576683214824">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1398" height="262" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1576680794912" />
+    <state width="1398" height="262" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1576683214824" />
     <state width="1398" height="220" key="GridCell.Tab.0.bottom/2560.120.1440.877/0.23.2560.1026@0.23.2560.1026" timestamp="1576066478141" />
-    <state width="1398" height="262" key="GridCell.Tab.0.center" timestamp="1576680794912">
+    <state width="1398" height="262" key="GridCell.Tab.0.center" timestamp="1576683214822">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1398" height="262" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1576680794912" />
+    <state width="1398" height="262" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1576683214822" />
     <state width="1398" height="220" key="GridCell.Tab.0.center/2560.120.1440.877/0.23.2560.1026@0.23.2560.1026" timestamp="1576066478140" />
-    <state width="1398" height="262" key="GridCell.Tab.0.left" timestamp="1576680794911">
+    <state width="1398" height="262" key="GridCell.Tab.0.left" timestamp="1576683214821">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1398" height="262" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1576680794911" />
+    <state width="1398" height="262" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1576683214821" />
     <state width="1398" height="220" key="GridCell.Tab.0.left/2560.120.1440.877/0.23.2560.1026@0.23.2560.1026" timestamp="1576066478140" />
-    <state width="1398" height="262" key="GridCell.Tab.0.right" timestamp="1576680794912">
+    <state width="1398" height="262" key="GridCell.Tab.0.right" timestamp="1576683214823">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1398" height="262" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1576680794912" />
+    <state width="1398" height="262" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1576683214823" />
     <state width="1398" height="220" key="GridCell.Tab.0.right/2560.120.1440.877/0.23.2560.1026@0.23.2560.1026" timestamp="1576066478141" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1576612858966">
+    <state width="1398" height="273" key="GridCell.Tab.1.bottom" timestamp="1576682839823">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.23.1440.846@0.23.1440.846" timestamp="1576612858966" />
+    <state width="1398" height="273" key="GridCell.Tab.1.bottom/0.23.1440.846@0.23.1440.846" timestamp="1576682839823" />
+    <state width="1398" height="273" key="GridCell.Tab.1.center" timestamp="1576682839823">
+      <screen x="0" y="23" width="1440" height="846" />
+    </state>
+    <state width="1398" height="273" key="GridCell.Tab.1.center/0.23.1440.846@0.23.1440.846" timestamp="1576682839823" />
+    <state width="1398" height="273" key="GridCell.Tab.1.left" timestamp="1576682839823">
+      <screen x="0" y="23" width="1440" height="846" />
+    </state>
+    <state width="1398" height="273" key="GridCell.Tab.1.left/0.23.1440.846@0.23.1440.846" timestamp="1576682839823" />
+    <state width="1398" height="273" key="GridCell.Tab.1.right" timestamp="1576682839823">
+      <screen x="0" y="23" width="1440" height="846" />
+    </state>
+    <state width="1398" height="273" key="GridCell.Tab.1.right/0.23.1440.846@0.23.1440.846" timestamp="1576682839823" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1576681398526">
+      <screen x="0" y="23" width="1440" height="846" />
+    </state>
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.23.1440.846@0.23.1440.846" timestamp="1576681398526" />
     <state x="745" y="193" width="670" height="676" key="search.everywhere.popup" timestamp="1576678849629">
       <screen x="0" y="23" width="1440" height="846" />
     </state>

@@ -1,3 +1,5 @@
+import sun.tools.java.SyntaxError;
+
 import java.util.Scanner;
 
 /**
@@ -23,14 +25,15 @@ public class CardForceClient {
         Card top = cardDeck.reveal();
         //TODO: Add In and out shuffles:
         System.out.println("----------------------------------------------------------------------------------");
-        System.out.println("---In Shuffle---");
-        cardDeck.inShuffle();
-        cardDeck.show();
-        System.out.println("----------------------------------------------------------------------------------");
-        System.out.println("---Out Shuffle---");
-        cardDeck.inShuffle();
+//        System.out.println("---In Shuffle---");
+//        cardDeck.inShuffle();
+//        cardDeck.show();
+//        System.out.println("----------------------------------------------------------------------------------");
+//        System.out.println("---Out Shuffle---");
+//        cardDeck.outShuffle();
 //        cardDeck.shuffle();
 //        System.out.println("Shuffled deck:");
+        cardDeck = cardForce(cardDeck);
         cardDeck.show();
         System.out.println("----------------------------------------------------------------------------------");
         // Double check position is correct using the find method:
@@ -43,6 +46,23 @@ public class CardForceClient {
 
 
 
+    }
+
+    private static DeckInterface cardForce(DeckInterface deck){
+        int pos = getInput();
+        //convert the int into a binary string
+        String binaryInt = Integer.toBinaryString(pos);
+
+        for(char letter: binaryInt.toCharArray()){
+            if(letter == '0'){
+                deck.inShuffle();
+            } else if (letter == '1'){
+                deck.outShuffle();
+            } else {
+                throw new IllegalArgumentException("Incorrect type supplied, expected type int.");
+            }
+        }
+        return deck;
     }
 
     private static int getInput(){
