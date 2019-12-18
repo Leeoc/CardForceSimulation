@@ -23,7 +23,7 @@ public class Deck<T> implements DeckInterface<T> {
         init();
         if(true) {
             for (int i = 0; i < 4; i++) {
-                for (int j = 1; j < 13; j++) {
+                for (int j = 1; j <= 13; j++) {
                     Card tempCard = new Card(j, i);  // creates a new card using int constructor
                     addNew((T)tempCard);
                 }
@@ -187,11 +187,9 @@ public class Deck<T> implements DeckInterface<T> {
      */
     //TODO: Clean up the code, find a way to make sure the two random ints dont match and stay within bounds.
     public void shuffle(){
-//        Random rand = new Random();
         for(int i = 1; i < currentSize; i++){
             int rand = (int)(Math.random() * currentSize) + 1;
             int rand2 = (int)(Math.random() * currentSize) + 1;
-//            System.out.println("random= " + rand + "random2 = " + rand2);
             try {
                 swapNode(rand, rand2);
             } catch (Exception E){
@@ -216,6 +214,7 @@ public class Deck<T> implements DeckInterface<T> {
             //get the nodes data.
             Node firstNode = getNodeAt(firstIndex);  //DATA OF THE NODES ie card
             Node secondNode = getNodeAt(secondIndex);
+
             // swap the data of the two nodes not the node links
             T firstData = firstNode.getData();
             T secondData = secondNode.getData();
@@ -227,8 +226,112 @@ public class Deck<T> implements DeckInterface<T> {
         }
     }
 
+    /**
+     * Public method inShuffle, used to perform an in shuffle on the deck of cards, it creates to new decks to split the cards, then
+     * it will one card from each deck in turn to create the shuffle, the temp decks are then removed.
+     */
+    public void inShuffle(){
+        assert !isEmpty();
+
+        if(!isEmpty() && currentSize > 0) {
+            //TODO need to change list half look at notes for better method in sorting.
+            int size = getSize();
+            int listHalf = (size / 2);
+
+            System.out.println(getSize());
+            System.out.println(listHalf);
+            // create 2 new decks, to hold each half
+            Deck<T> firstHalf = new Deck<>(true);
+            Deck<T> secondHalf = new Deck<>(true);
+            int count = 0;
+            Node current = firstNode;
+
+            for (int i = 1; i <= listHalf; i++) {
+                firstHalf.addNew(current.getData());
+                current = current.getNext();
+                count++;
+            }
+            System.out.println("Count 1 = " + count);
+            count = 0;
+            current = getNodeAt(listHalf + 1);
+            for (int i = (listHalf + 1); i <= getSize(); i++) {
+                secondHalf.addNew(current.getData());
+                current = current.getNext();
+                count++;
+            }
+
+            //remove all items from old list and add new items in via the in shuffle technique
+            init();
+            count = 0;
+            for (int i = 1; i <= firstHalf.getSize(); i++) {
+                addNew(firstHalf.getNode(i));
+                addNew(secondHalf.getNode(i));
+                count++;
+            }
+
+            // clean up unused decks.
+            firstHalf = null;
+            secondHalf = null;
+        }
+    }
+
+    /**
+     * Public method outShuffle, used to perform an out shuffle on the deck of cards, it creates to new decks to split the cards, then
+     * it will one card from each deck in turn to create the shuffle, the temp decks are then removed.
+     */
+    public void outShuffle(){
+        assert !isEmpty();
+
+        if(!isEmpty() && currentSize > 0) {
+            //TODO need to change list half look at notes for better method in sorting.
+            int size = getSize();
+            int listHalf = (size / 2);
+
+            System.out.println(getSize());
+            System.out.println(listHalf);
+            // create 2 new decks, to hold each half
+            Deck<T> firstHalf = new Deck<>(true);
+            Deck<T> secondHalf = new Deck<>(true);
+            int count = 0;
+            Node current = firstNode;
+
+            for (int i = 1; i <= listHalf; i++) {
+                firstHalf.addNew(current.getData());
+                current = current.getNext();
+                count++;
+            }
+            System.out.println("Count 1 = " + count);
+            count = 0;
+            current = getNodeAt(listHalf + 1);
+            for (int i = (listHalf + 1); i <= getSize(); i++) {
+                secondHalf.addNew(current.getData());
+                current = current.getNext();
+                count++;
+            }
+
+            //remove all items from old list and add new items in via the in shuffle technique
+            init();
+            count = 0;
+            for (int i = 1; i <= firstHalf.getSize(); i++) {
+                addNew(secondHalf.getNode(i));
+                addNew(firstHalf.getNode(i));
+                count++;
+            }
+
+            // clean up unused decks.
+            firstHalf = null;
+            secondHalf = null;
+        }
+    }
+
+    /**
+     * Public method find, searches the list for a certain nodes data, returns the nodes index.
+     * @param data the data to be found in the list
+     * @return int of the index the node is at in the list, will return 0 if not found in the list.
+     */
     public int find(T data){
-        return sequentialSearch(data,firstNode,1);
+        int firstIndex = 1;
+        return sequentialSearch(data,firstNode,firstIndex);
     }
 
     /**
@@ -256,7 +359,7 @@ public class Deck<T> implements DeckInterface<T> {
             index++;
             return index;
         }
-        return 0;   // returns a invalid value if it isnt found.
+        return 0;   // returns a invalid value if it isn't found.
     }
 
 

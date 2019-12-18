@@ -16,16 +16,23 @@ public class CardForceClient {
         System.out.println("----------------------------------------------------------------------------------");
         cardDeck.reveal();
         System.out.println("----------------------------------------------------------------------------------");
-
         System.out.println("---Shuffling the Deck---");
         cardDeck.shuffle();
+        cardDeck.show();
+        System.out.println("----------------------------------------------------------------------------------");
         Card top = cardDeck.reveal();
         //TODO: Add In and out shuffles:
-
+        System.out.println("----------------------------------------------------------------------------------");
+        System.out.println("---In Shuffle---");
+        cardDeck.inShuffle();
+        cardDeck.show();
+        System.out.println("----------------------------------------------------------------------------------");
+        System.out.println("---Out Shuffle---");
+        cardDeck.inShuffle();
 //        cardDeck.shuffle();
 //        System.out.println("Shuffled deck:");
-//        cardDeck.show();
-
+        cardDeck.show();
+        System.out.println("----------------------------------------------------------------------------------");
         // Double check position is correct using the find method:
         int index = cardDeck.find(top);
         System.out.println("Top card is at index: " + index);

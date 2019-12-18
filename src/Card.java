@@ -68,15 +68,15 @@ public class Card<T>{
      * Public method to show the suit, value, face and colour of the card.
      */
     public void show(){
-        if(value >= 10 || value == 1) {
+        if(value > 10 || value == 1) {
             String tempFaceName = "";
             if (value == 1) {
                 tempFaceName = "Ace";
-            } else if (value == 10) {
-                tempFaceName = "Jack";
             } else if (value == 11) {
-                tempFaceName = "Queen";
+                tempFaceName = "Jack";
             } else if (value == 12) {
+                tempFaceName = "Queen";
+            } else if (value == 13) {
                 tempFaceName = "King";
             }
             System.out.printf("The %s of %s. Face: %b, Colour: %s\n", tempFaceName, suit, face, colour);
