@@ -2,13 +2,10 @@
  * Deck List class, an ADT used to store objects of the Card class
  * Implemented by the Deck Interface.
  * COM498 Coursework 2
- * B00757542
- * John Lee O'Connell
+ *  * B00757542
+ *  * John Lee O'Connell
  * @param <T> The Data type you want to use.
  */
-
-import java.util.Random;
-
 public class Deck<T> implements DeckInterface<T> {
 
     // Private Method variables:
@@ -31,6 +28,10 @@ public class Deck<T> implements DeckInterface<T> {
         }
     }
 
+    /**
+     * Second constructor for the list, will create an empty list.
+     * @param empty boolean, if true an empty list will be created.
+     */
     public Deck(boolean empty){
         if (empty == true) {
             init();
@@ -44,9 +45,8 @@ public class Deck<T> implements DeckInterface<T> {
      * @param newEntry the data you want to add into the list.
      */
     public void addNew(T newEntry){
-
         Node tempNode = new Node(newEntry);
-        // Check if the contains nodes, if not then add entry to the end of the list
+        // Check if the list  contains nodes, if not then add entry to the end of the list
         if(isEmpty()){
             firstNode = tempNode;
         } else {
@@ -78,37 +78,19 @@ public class Deck<T> implements DeckInterface<T> {
             }
             currentSize++;
         } else
-            throw new IndexOutOfBoundsException("Illegal position given to add operation.");
+            throw new IndexOutOfBoundsException("Position is out of Bounds for the list.");
     }
 
     /**
      * Public method used to remove the last node in the list.
      * If only one entry in list the list will be set to null.
      */
-    // TODO: Need to add a last variable in the Node class to make this process more efficent.
-    // TODO: This works but not very well lol.
     public void remove(){
-
         if (isEmpty()) {
             init();
         } else {
             Node Newlast = getNodeAt(currentSize - 1);
             currentSize--;
-        }
-    }
-
-    /**
-     * Public method to remove a node at a given int index position.
-     * @param position int index of the node to be removed.
-     */
-    //TODO: Add a new removeAt method to remove a node at a given index.
-    public void removeAt(int position){
-        if(isEmpty()){
-            init();
-        } else if ((position > 0) && (position <= currentSize) && (!isEmpty())){
-
-        } else {
-            throw new IndexOutOfBoundsException("Position isn't valid.");
         }
     }
 
@@ -127,8 +109,7 @@ public class Deck<T> implements DeckInterface<T> {
             //loop through all the entries in the list and display their contents
             for (int i = 0; i < currentSize; i++) {
                 try {
-                    Card tempCurrent = (Card) current.getData();
-                    Card showCard = tempCurrent;    //cast the ADT to a card to use its show method.
+                    Card showCard = (Card) current.getData(); //cast the ADT to a card to use its show method.
                     showCard.show();
                 } catch (Exception IllegalArgumentException) {
                     System.out.println(current.getData());
@@ -145,7 +126,12 @@ public class Deck<T> implements DeckInterface<T> {
      * @return int value of the current list size.
      */
     public int getSize(){
-        return currentSize;
+        assert !isEmpty();
+        if(!isEmpty()) {
+            return currentSize;
+        } else {
+            throw new IndexOutOfBoundsException("The list is empty, and may not have been initialised properly.");
+        }
     }
 
     /**
@@ -154,6 +140,7 @@ public class Deck<T> implements DeckInterface<T> {
      * @return the data of the node at the specified position.
      */
     public T getNode(int position){
+        assert !isEmpty();
         if((position <= currentSize) && (position > 0)){
             return getNodeAt(position).getData();
         }else{
@@ -165,16 +152,17 @@ public class Deck<T> implements DeckInterface<T> {
      *  Public Method to show the top card in the deck.
      */
     public T reveal(){
+        final int top = 1;
         assert (getSize() > 0);
         if(getSize() > 0) {
-            T showNode = getNode(1);
+            T showNode = getNode(top);
             try {
                 Card showCard = (Card) showNode;    //cast the ADT to a card to use its show method.
                 System.out.println("The top card in the deck is:");
                 showCard.show();
                 return (T)showCard;
             } catch (Exception IllegalArgumentException) {
-                System.out.println("\nIncorrect Data type, expected type of class Card.");
+                System.out.println(showNode);
             }
         } else {
             throw new IndexOutOfBoundsException("\nList has not been created.");
@@ -185,20 +173,18 @@ public class Deck<T> implements DeckInterface<T> {
     /**
      * Public method to randomly shuffle the deck.
      */
-    //TODO: Clean up the code, find a way to make sure the two random ints dont match and stay within bounds.
     public void shuffle(){
+        // will perform a swap for each item in the list.
         for(int i = 1; i < currentSize; i++){
             int rand = (int)(Math.random() * currentSize) + 1;
             int rand2 = (int)(Math.random() * currentSize) + 1;
             try {
                 swapNode(rand, rand2);
             } catch (Exception E){
-                swapNode(13,44);
+                swapNode(1,4);
             }
         }
-
     }
-
 
     /**
      * Private helper method to swap two nodes in the list
@@ -206,8 +192,8 @@ public class Deck<T> implements DeckInterface<T> {
      * @param secondIndex the index of the second node to be swapped.
      */
     public void swapNode(int firstIndex, int secondIndex){
-        assert !isEmpty();
 
+        assert !isEmpty();
         if(firstIndex > 0 && firstIndex <= currentSize && secondIndex > 0
                 && secondIndex <= currentSize && firstIndex != secondIndex){
 
@@ -233,47 +219,35 @@ public class Deck<T> implements DeckInterface<T> {
     public void inShuffle(){
         assert !isEmpty();
 
+        // half the list.
         if(!isEmpty() && currentSize > 0) {
-            //TODO need to change list half look at notes for better method in sorting.
             int size = getSize();
             int listHalf = (size / 2);
 
-            System.out.println(getSize());
-            System.out.println(listHalf);
             // create 2 new decks, to hold each half
             Deck<T> firstHalf = new Deck<>(true);
             Deck<T> secondHalf = new Deck<>(true);
-            int count = 0;
             Node current = firstNode;
 
+            // add the first half of the original list to the temp list.
             for (int i = 1; i <= listHalf; i++) {
                 firstHalf.addNew(current.getData());
                 current = current.getNext();
-                count++;
             }
-            System.out.println("Count 1 = " + count);
-            count = 0;
+
             current = getNodeAt(listHalf + 1);
             for (int i = (listHalf + 1); i <= getSize(); i++) {
                 secondHalf.addNew(current.getData());
                 current = current.getNext();
-                count++;
             }
 
             //remove all items from old list and add new items in via the in shuffle technique
             init();
-            count = 0;
+
             for (int i = 1; i <= firstHalf.getSize(); i++) {
                 addNew(firstHalf.getNode(i));
                 addNew(secondHalf.getNode(i));
-                count++;
             }
-
-//            System.out.println("First half:");
-//            firstHalf.show();
-//
-//            System.out.println("Second half:");
-//            secondHalf.show();
 
             // clean up unused decks.
             firstHalf = null;
@@ -289,46 +263,32 @@ public class Deck<T> implements DeckInterface<T> {
         assert !isEmpty();
 
         if(!isEmpty() && currentSize > 0) {
-            //TODO need to change list half look at notes for better method in sorting.
+
             int size = getSize();
             int listHalf = (size / 2);
 
-            System.out.println(getSize());
-            System.out.println(listHalf);
             // create 2 new decks, to hold each half
             Deck<T> firstHalf = new Deck<>(true);
             Deck<T> secondHalf = new Deck<>(true);
-            int count = 0;
             Node current = firstNode;
 
             for (int i = 1; i <= listHalf; i++) {
                 firstHalf.addNew(current.getData());
                 current = current.getNext();
-                count++;
             }
-            System.out.println("Count 1 = " + count);
-            count = 0;
+
             current = getNodeAt(listHalf + 1);
             for (int i = (listHalf + 1); i <= getSize(); i++) {
                 secondHalf.addNew(current.getData());
                 current = current.getNext();
-                count++;
             }
 
             //remove all items from old list and add new items in via the in shuffle technique
             init();
-            count = 0;
             for (int i = 1; i <= firstHalf.getSize(); i++) {
                 addNew(secondHalf.getNode(i));
                 addNew(firstHalf.getNode(i));
-                count++;
             }
-
-//            System.out.println("First half:");
-//            firstHalf.show();
-//
-//            System.out.println("Second half:");
-//            secondHalf.show();
 
             // clean up unused decks.
             firstHalf = null;
@@ -400,7 +360,7 @@ public class Deck<T> implements DeckInterface<T> {
     private void init(){
         firstNode = null;
         currentSize = 0;
-        System.out.println("List Created.");
+//        System.out.println("List Created.");
     }
 
 
@@ -418,7 +378,6 @@ public class Deck<T> implements DeckInterface<T> {
             result = false;
         }
         return result;
-
     }
 
 

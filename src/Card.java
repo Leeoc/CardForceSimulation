@@ -1,3 +1,9 @@
+/**
+ * Public class Card
+ * COM498 Coursework 2
+ * B00757542
+ * John Lee O'Connell
+ */
 public class Card<T>{
 
     // Constructor variables:

@@ -1,68 +1,65 @@
+/**
+ * Public class Test, used for testing the ADT and Interfaces.
+ * COM498 Coursework 2
+ * B00757542
+ * John Lee O'Connell
+ */
+
 public class Test {
     public static void main (String[] args) {
+        System.out.println("----------------------------------------------------------------------------------");
         System.out.println("***Testing Started***");
 
-        //set to null so the constructor can init the list as empty
-        DeckInterface<Card> testingDeck= new Deck<>();
+        System.out.println("----------------------------------------------------------------------------------");
+        System.out.println("Integer Testing:");
         DeckInterface<Integer> testInt = new Deck<>(true);
-        Integer[] array = {10, 20, 30, 40};
-        for(int i = 0; i < array.length; i++) {
+        Integer[] array = {10, 20, 30, 40, 50, 60, 70, 80, 100};
+        for (int i = 0; i < array.length; i++) {
             testInt.addNew(array[i]);
         }
+        // Testing show
         testInt.show();
-        testInt.swapNode(1,2);
+        System.out.println("----------------------------------------------------------------------------------");
+        System.out.println("Swap test, pos 1 and 2 should swap");
+        testInt.swapNode(1, 2);
+        if (testInt.find(array[0]) == 1) {
+            System.out.println("Test failed");
+        } else {
+            System.out.println("Test passed");
+        }
         testInt.show();
-        int hello = testInt.find(20);
-
-//        testingDeck = deck();
-//        String tempSuit = "";
-//        for(int i = 1; i < testingDeck.getSize(); i++){
-//            Card temp;
-//            temp = testingDeck.getNode(i);
-//            tempSuit = temp.getSuit();
-//            if(temp.getValue() > 0) {
-//                temp.show();
-//            } else {
-//                System.out.println("\n\n");
-//            }
-//        }
-        //TODO REMOVE THIS FOR TESTS
-//        for(int i = 1; i < testingDeck.getSize(); i++){
-//            Card temp = testingDeck.getNode(i);
-//            temp.show();
-//        }
-        // show the top card in the deck
-//        testingDeck.reveal();
-//        testingDeck.shuffle();
-//        testingDeck.show();
-
-
-//        //test try catch
-//        System.out.println("\n\n\n");
-//        DeckInterface<Integer> incorrect = new Deck<>();
-//        incorrect.addNew(10);
-//        incorrect.addNew(27);
-//        incorrect.show();
-//        incorrect.remove();
-//        incorrect.remove();
-//        incorrect.show();
-
-//        incorrect.reveal();
+        int pos = testInt.find(20);
+        System.out.println("20 is found at position: " + pos);
+        System.out.println("----------------------------------------------------------------------------------");
+        System.out.println("Testing shuffles:");
+        System.out.println("Random shuffle");
+        //random shuffle is gerating incorrect sizes of rand
+        testInt.shuffle();
+        testInt.show();
+        System.out.println("In shuffle");
+        testInt.inShuffle();
+        testInt.show();
+        System.out.println("Out shuffle");
+        testInt.outShuffle();
+        testInt.show();
+        System.out.println("----------------------------------------------------------------------------------");
+        System.out.println("Reveal testing:");
+        testInt.reveal();
+        System.out.println("----------------------------------------------------------------------------------");
+        System.out.println("Remove testing:");
+        testInt.remove();
+        testInt.show();
+        System.out.println("----------------------------------------------------------------------------------");
+        System.out.println("Add position testing");
+        testInt.addNew(27, 2);
+        testInt.show();
+        // end
+        System.out.println("----------------------------------------------------------------------------------");
+        System.out.println("******Testing Finished******");
+        System.out.println("----------------------------------------------------------------------------------");
+        System.out.println("John Lee O'Connell\nB00757542\nCW2 COM498\n2nd Year Software Engineering");
     }
 
-//    public static DeckInterface deck(){
-//            DeckInterface<Card> cardDeck = new Deck<>();
-//            System.out.println("Creating Deck of Cards.");
-//            // loop adding the cards to the list
-//            for (int i = 0; i < 4; i++) {
-//                for (int j = 1; j < 14; j++) {
-//                    Card tempCard = new Card(j, i);  // creates a new card using int constructor
-//                    cardDeck.addNew(tempCard);
-//                }
-//            }
-//        System.out.println(cardDeck.getSize());
-//            return cardDeck;
-//    }
 }
 
 
